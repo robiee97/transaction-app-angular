@@ -1,0 +1,27 @@
+<form [formGroup]="userInfo" (ngSubmit)="getData()">
+    <table>
+        <tr>
+            <td>
+                <h2>Enter User Details</h2>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label> USER ID: </label> <input type="text" formControlName="userId" placeholder="User ID"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label> RECIPIENT ID: </label> <input type="text" formControlName="recipientId" placeholder="Recipient ID"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="btn btn-primary" type="submit" [disabled]="!userInfo.valid">Get History</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+
+

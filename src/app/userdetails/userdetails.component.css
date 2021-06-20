@@ -1,0 +1,9 @@
+h2{
+    text-align: center;
+}
+table,input{
+    width: 100%;
+}
+button{
+    float: right;
+}

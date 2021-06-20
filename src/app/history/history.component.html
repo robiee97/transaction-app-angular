@@ -1,0 +1,103 @@
+<div class="historySection">
+    <div *ngFor="let t of tickets">
+        <h6>...................................................{{t.endDate.substring(0,10)}}..............................................................</h6>
+        <br>
+        <div *ngIf="t.direction == 1">
+            <div class="rightMat">
+                <div class="box">
+                    <table>
+                        <tr>
+                            <td>
+                                <h1> ₹ {{ t.amount }}</h1>
+                            </td>
+                            <td *ngIf="t.type==1">
+                                You Paid
+                            </td>
+                            <td *ngIf="t.type==2">
+                                You requested
+                            </td>
+                        </tr>
+                        <tr>
+                            <td *ngIf="t.status==2">
+                                <tr>
+                                    <td>
+                                        Transaction ID:
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        {{t.id}}
+                                    </td>
+                                </tr>
+                            </td>
+                            <td *ngIf="t.status==1">
+                                <tr>
+                                    <button class="btn btn-transparent" >Cancel</button>
+                                </tr>
+                            </td>
+                            <td>
+                                <button class="btn btn-transparent" routerLink="transaction"> <strong> > </strong> </button>
+                            </td>
+                        </tr>
+                        <tr *ngIf="t.description!=''">
+                            <td><h4> {{t.description}} </h4></td>
+                        </tr>
+                    </table>
+                </div>
+                    <p>{{t.endDate.substring(0,10)}} {{t.endDate.substring(11,20)}}</p>
+            </div>
+        </div>
+        <div *ngIf="t.direction == 2">
+            <div class="leftMat">
+                <div class="box">
+                    <table>
+                        <tr>
+                            <td>
+                                <h1> ₹ {{ t.amount }}</h1>
+                            </td>
+                            <td *ngIf="t.type==1">
+                                Request recieved
+                            </td>
+                            <td *ngIf="t.type==2">
+                                You recieved
+                            </td>
+                        </tr>
+                        <tr>
+                            <td *ngIf="t.status==1">
+                                <tr>
+                                    <td>
+                                        Transaction ID:
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        {{t.id}}
+                                    </td>
+                                </tr>
+                            </td>
+                            <td *ngIf="t.status==2">
+                                <tr>
+                                    <td>
+                                        <button class="btn btn-transparent" >Pay</button>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-transparent" >Decline</button>
+                                    </td>
+                                </tr>
+                            </td>
+                            <td>
+                                <button class="btn btn-transparent" routerLink="transaction"> <strong> > </strong> </button>
+                            </td>
+                        </tr>
+                        <tr *ngIf="t.description!=''">
+                            <td><h4> {{t.description}} </h4></td>
+                        </tr>
+                    </table>
+                </div>
+                <p>{{t.endDate.substring(0,10)}} {{t.endDate.substring(11,20)}}</p>
+            </div>
+        </div>
+        <br>  
+
+    </div>
+</div>

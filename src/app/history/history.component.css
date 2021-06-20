@@ -1,0 +1,23 @@
+.rightMat{
+    margin-left: 50%;
+}
+.leftMat{
+    margin-right: 50%;
+}
+.box{
+    border: solid black 1px;
+}
+p{
+    text-align: right;
+}
+button{
+    border: solid black 1px;
+    
+}
+
+.historySection{
+    border: solid black 1px;
+}
+h4{
+    text-align: center;
+}
